@@ -17,6 +17,7 @@ void Menuloop();
 };
 void uuui::init(){
     u8g2.clearBuffer();
+    
 
 }
 void uuui::join(){
@@ -37,9 +38,11 @@ void uuui::Menuloop(){
 }
 void push_B();
 uuui u;
+uuui ff;
 
 void setup() {
 u.init();
+ff.init();
 attachInterrupt(digitalPinToInterrupt(PB0),push_B,FALLING);
 u8g2.begin();
 }
