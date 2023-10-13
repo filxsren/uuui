@@ -13,10 +13,15 @@ void uuui::init(String* array){
     u8g2.drawRFrame(menuthings.cursorInitPlaceX,menuthings.cursorInitPlaceY,menuthings.cursorX,menuthings.cursorY,2);
 
     u8g2.drawBox(123,1,3,12);
+    u8g2.setFont(u8g2_font_4x6_mf);
+    /**/
+    int menuListSize = sizeof(array)/sizeof(*array);
 
-
+    for(int i=0; i<menuListSize; i++){
+    u8g2.drawStr(3,menuListSize*10+3,array[i].c_str());
+    }
     
-
+    u8g2.sendBuffer();
 }
 void uuui::join(){
 

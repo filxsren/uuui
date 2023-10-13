@@ -8,7 +8,7 @@
 void push_B();
 uuui u;
 // char a[] = "test";
-String a[] = {"test1"};
+String a[] = {"test1", "test2", "test3"};
 
 void setup() {
 u.init(a);
