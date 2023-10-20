@@ -17,14 +17,20 @@ class uuui
     struct MenuThings
     {
         /* data */
+        int Basic_pxel=10;
+        /*cursor things*/
         int cursorInitPlaceX=3;
         int cursorInitPlaceY=3;
-        const int cursorX=57;
-        const int cursorY=12;
+        const int cursorX=119;
+        const int cursorY=10;
+        /*move block things*/
+        int moveBlockinitPlaceX=123;
+        int moveBlockinitPlaceY=3;
 
 
     };
     MenuThings menuthings;
+    
 
 
 };

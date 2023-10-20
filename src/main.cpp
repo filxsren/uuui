@@ -11,24 +11,28 @@ uuui u;
 String a[] = {"test1", "test2", "test3"};
 
 void setup() {
-u.init(a);
+
+    u.init(a);
 
 
-attachInterrupt(digitalPinToInterrupt(10),push_B,FALLING);
-
-}
+    attachInterrupt(digitalPinToInterrupt(10),push_B,FALLING);
+    Serial.begin(9600);
+    Serial.println("setup");
+    }
 
 void loop() {
-if(u.cursorPlace()==0){
-u.quit();
+    Serial.println("setup");
+    delay(1000);    
+    if(u.cursorPlace()==0){
+    u.quit();
 
-u.join();
-}
-u.Menuloop();
-}
+    u.join();
+    }
+    u.Menuloop();
+    }
 
-void push_B(){
-//触发按键
-u.Setcursor(1);
-}
+    void push_B(){
+    //触发按键
+    u.Setcursor(1);
+    }
 

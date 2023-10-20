@@ -5,20 +5,16 @@ void uuui::init(String* array){
     u8g2.begin();
 
     u8g2.clearBuffer();
-
-    u8g2.drawLine(124,2,124,63);
-    u8g2.drawHLine(123,2,3);
-    u8g2.drawHLine(123,63,3);
-
+    /*cursor*/
     u8g2.drawRFrame(menuthings.cursorInitPlaceX,menuthings.cursorInitPlaceY,menuthings.cursorX,menuthings.cursorY,2);
 
-    u8g2.drawBox(123,1,3,12);
+    /*font*/
     u8g2.setFont(u8g2_font_4x6_mf);
-    /**/
+    /*moveBlock*/
     int menuListSize = sizeof(array)/sizeof(*array);
-
+    /*show*/
     for(int i=0; i<menuListSize; i++){
-    u8g2.drawStr(3,menuListSize*10+3,array[i].c_str());
+    u8g2.drawStr(4,11+menuListSize*i,array[i].c_str());
     }
     
     u8g2.sendBuffer();
