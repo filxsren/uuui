@@ -12,17 +12,18 @@ String a[] = {"test1", "test2", "test3"};
 
 void setup() {
 
-    u.init(a);
+    
 
-
-    attachInterrupt(digitalPinToInterrupt(10),push_B,FALLING);
+    
+    /*attachInterrupt(digitalPinToInterrupt(10),push_B,FALLING);*/
     Serial.begin(9600);
-    Serial.println("setup");
+    
     }
 
 void loop() {
+    delay(1000);
     Serial.println("setup");
-    delay(1000);    
+    u.init(a);    
     if(u.cursorPlace()==0){
     u.quit();
 
@@ -31,7 +32,7 @@ void loop() {
     u.Menuloop();
     }
 
-    void push_B(){
+void push_B(){
     //触发按键
     u.Setcursor(1);
     }

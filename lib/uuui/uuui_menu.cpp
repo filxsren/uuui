@@ -16,6 +16,7 @@ void uuui::init(String* array){
     for(int i=0; i<menuListSize; i++){
     u8g2.drawStr(4,11+menuListSize*i,array[i].c_str());
     }
+    Serial.println(menuListSize);
     
     u8g2.sendBuffer();
 }
