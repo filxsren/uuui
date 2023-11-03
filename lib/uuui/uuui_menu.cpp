@@ -33,5 +33,23 @@ int uuui::cursorPlace(){
     return menuthings.cursorInitPlaceX, menuthings.cursorInitPlaceY;
 }
 void uuui::Menuloop(){
+    PIDanmate(50);
+
+}
+float uuui::PIDanmate(int tager){ 
+  /* error1=tager-v;
+  output=output+error1*P+((error1-error0)/0.15)*D;
+  v=v+output;
+  Serial.println(v);
+  error0=error1;*/
+  if(menuthings.error0!=menuthings.error1){
+  menuthings.error1=tager-menuthings.v;
+  menuthings.output=menuthings.output+menuthings.error1*menuthings.P+((menuthings.error1-menuthings.error0)/0.01)*menuthings.D;
+  menuthings.v=menuthings.v+menuthings.output;
+  menuthings.error0=menuthings.error1;  
+  }
+  
+
+  return menuthings.v;
 
 }

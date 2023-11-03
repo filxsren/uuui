@@ -7,6 +7,7 @@
 
 void push_B();
 uuui u;
+uuui_Show show;
 // char a[] = "test";
 String a[] = {"test1", "test2", "test3"};
 
@@ -15,7 +16,7 @@ void setup() {
     
 
     
-    /*attachInterrupt(digitalPinToInterrupt(10),push_B,FALLING);*/
+    attachInterrupt(digitalPinToInterrupt(10),push_B,FALLING);
     Serial.begin(9600);
     
     }
@@ -30,6 +31,7 @@ void loop() {
     u.join();
     }
     u.Menuloop();
+  
     }
 
 void push_B(){
